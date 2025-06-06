@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Qe55JIzaxU2EmQe203zkQan3g2Z4YoNy1P0GdM8v4nE=",
+  "Source": "FastTech.LojaCardapio.Web",
+  "BasePath": "_content/FastTech.LojaCardapio.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

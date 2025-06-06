@@ -1,0 +1,6 @@
+@FastTech.LojaCardapio.Web_HostAddress = http://localhost:5268
+
+GET {{FastTech.LojaCardapio.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
