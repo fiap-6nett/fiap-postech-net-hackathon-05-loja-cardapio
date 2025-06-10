@@ -34,3 +34,4 @@ C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio
 C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Web\obj\Debug\net8.0\FastTech.LojaCardapio.Web.pdb
 C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Web\obj\Debug\net8.0\FastTech.LojaCardapio.Web.genruntimeconfig.cache
 C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Web\obj\Debug\net8.0\ref\FastTech.LojaCardapio.Web.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Web\obj\Debug\net8.0\FastTech.LojaCardapio.Web.sourcelink.json

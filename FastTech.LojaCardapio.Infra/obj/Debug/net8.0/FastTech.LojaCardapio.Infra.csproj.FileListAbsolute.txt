@@ -1,0 +1,12 @@
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\bin\Debug\net8.0\FastTech.LojaCardapio.Infra.deps.json
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\bin\Debug\net8.0\FastTech.LojaCardapio.Infra.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\bin\Debug\net8.0\FastTech.LojaCardapio.Infra.pdb
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\FastTech.LojaCardapio.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\FastTech.LojaCardapio.Infra.AssemblyInfoInputs.cache
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\FastTech.LojaCardapio.Infra.AssemblyInfo.cs
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\FastTech.LojaCardapio.Infra.csproj.CoreCompileInputs.cache
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\FastTech.LojaCardapio.Infra.sourcelink.json
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\FastTech.LojaCardapio.Infra.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\refint\FastTech.LojaCardapio.Infra.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\FastTech.LojaCardapio.Infra.pdb
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\ref\FastTech.LojaCardapio.Infra.dll

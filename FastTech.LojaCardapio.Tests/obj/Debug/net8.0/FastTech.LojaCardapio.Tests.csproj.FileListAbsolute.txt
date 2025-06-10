@@ -1,0 +1,12 @@
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\bin\Debug\net8.0\FastTech.LojaCardapio.Tests.deps.json
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\bin\Debug\net8.0\FastTech.LojaCardapio.Tests.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\bin\Debug\net8.0\FastTech.LojaCardapio.Tests.pdb
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\obj\Debug\net8.0\FastTech.LojaCardapio.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\obj\Debug\net8.0\FastTech.LojaCardapio.Tests.AssemblyInfoInputs.cache
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\obj\Debug\net8.0\FastTech.LojaCardapio.Tests.AssemblyInfo.cs
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\obj\Debug\net8.0\FastTech.LojaCardapio.Tests.csproj.CoreCompileInputs.cache
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\obj\Debug\net8.0\FastTech.LojaCardapio.Tests.sourcelink.json
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\obj\Debug\net8.0\FastTech.LojaCardapio.Tests.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\obj\Debug\net8.0\refint\FastTech.LojaCardapio.Tests.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\obj\Debug\net8.0\FastTech.LojaCardapio.Tests.pdb
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Tests\obj\Debug\net8.0\ref\FastTech.LojaCardapio.Tests.dll

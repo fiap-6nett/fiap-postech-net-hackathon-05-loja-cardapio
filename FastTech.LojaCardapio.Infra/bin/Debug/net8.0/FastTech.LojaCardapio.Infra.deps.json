@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "FastTech.LojaCardapio.Infra/1.0.0": {
+        "runtime": {
+          "FastTech.LojaCardapio.Infra.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FastTech.LojaCardapio.Infra/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
