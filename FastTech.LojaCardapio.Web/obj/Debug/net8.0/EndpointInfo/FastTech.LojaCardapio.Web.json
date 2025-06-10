@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Cardapio": {
+    "/api/v1.0/Cardapio": {
       "get": {
         "tags": [
           "Cardapio"
@@ -40,7 +40,7 @@
         }
       }
     },
-    "/api/Cardapio/{id}": {
+    "/api/v1.0/Cardapio/{id}": {
       "get": {
         "tags": [
           "Cardapio"
@@ -118,17 +118,7 @@
         }
       }
     },
-    "/api/Loja": {
-      "get": {
-        "tags": [
-          "Loja"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/api/v1.0/Loja": {
       "post": {
         "tags": [
           "Loja"
@@ -153,62 +143,58 @@
         }
       }
     },
-    "/api/Loja/{id}": {
-      "get": {
-        "tags": [
-          "Loja"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/api/v1.0/Loja/UpdateLoja": {
       "put": {
         "tags": [
           "Loja"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": { }
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreDto"
+              }
             },
             "text/json": {
-              "schema": { }
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreDto"
+              }
             },
             "application/*+json": {
-              "schema": { }
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreDto"
+              }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
-      },
+      }
+    },
+    "/api/v1.0/Loja/{id}": {
       "delete": {
         "tags": [
           "Loja"
@@ -232,5 +218,54 @@
       }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "ResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateStoreDto": {
+        "required": [
+          "idStore",
+          "lastUpdatedAt",
+          "location",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "idStore": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 3,
+            "pattern": "^[A-Za-zÀ-ÿ\\s]+$",
+            "type": "string"
+          },
+          "location": {
+            "maxLength": 200,
+            "minLength": 3,
+            "pattern": "^[A-Za-zÀ-ÿ\\s]+$",
+            "type": "string"
+          },
+          "lastUpdatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
 }

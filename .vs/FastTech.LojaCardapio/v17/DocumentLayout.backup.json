@@ -3,16 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|solutionrelative:fasttech.lojacardapio.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|solutionrelative:fasttech.lojacardapio.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.web\\fasttech.lojacardapio.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|solutionrelative:fasttech.lojacardapio.web\\fasttech.lojacardapio.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.web\\controllers\\lojacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|solutionrelative:fasttech.lojacardapio.web\\controllers\\lojacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98ACA8A-1463-46F7-88CF-D5D41724A456}|FastTech.LojaCardapio.Infra\\FastTech.LojaCardapio.Infra.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.infra\\rabbitmq\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F98ACA8A-1463-46F7-88CF-D5D41724A456}|FastTech.LojaCardapio.Infra\\FastTech.LojaCardapio.Infra.csproj|solutionrelative:fasttech.lojacardapio.infra\\rabbitmq\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F98ACA8A-1463-46F7-88CF-D5D41724A456}|FastTech.LojaCardapio.Infra\\FastTech.LojaCardapio.Infra.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.infra\\rabbitmq\\rabbitmqproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F98ACA8A-1463-46F7-88CF-D5D41724A456}|FastTech.LojaCardapio.Infra\\FastTech.LojaCardapio.Infra.csproj|solutionrelative:fasttech.lojacardapio.infra\\rabbitmq\\rabbitmqproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.application\\dtos\\responsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|solutionrelative:fasttech.lojacardapio.application\\dtos\\responsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.web\\controllers\\cardapiocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|solutionrelative:fasttech.lojacardapio.web\\controllers\\cardapiocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.application\\services\\menuitemsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|solutionrelative:fasttech.lojacardapio.application\\services\\menuitemsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.application\\interfaces\\iasyncrabbitmqproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|solutionrelative:fasttech.lojacardapio.application\\interfaces\\iasyncrabbitmqproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.application\\services\\storesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|solutionrelative:fasttech.lojacardapio.application\\services\\storesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.application\\interfaces\\istoresservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|solutionrelative:fasttech.lojacardapio.application\\interfaces\\istoresservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{998E5C28-3F91-4896-8CE4-AEB035716A2A}|FastTech.LojaCardapio.Domain\\FastTech.LojaCardapio.Domain.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.domain\\entities\\storesentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{998E5C28-3F91-4896-8CE4-AEB035716A2A}|FastTech.LojaCardapio.Domain\\FastTech.LojaCardapio.Domain.csproj|solutionrelative:fasttech.lojacardapio.domain\\entities\\storesentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{998E5C28-3F91-4896-8CE4-AEB035716A2A}|FastTech.LojaCardapio.Domain\\FastTech.LojaCardapio.Domain.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.domain\\entities\\menuitemsentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{998E5C28-3F91-4896-8CE4-AEB035716A2A}|FastTech.LojaCardapio.Domain\\FastTech.LojaCardapio.Domain.csproj|solutionrelative:fasttech.lojacardapio.domain\\entities\\menuitemsentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{998E5C28-3F91-4896-8CE4-AEB035716A2A}|FastTech.LojaCardapio.Domain\\FastTech.LojaCardapio.Domain.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.domain\\enums\\categoryenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{998E5C28-3F91-4896-8CE4-AEB035716A2A}|FastTech.LojaCardapio.Domain\\FastTech.LojaCardapio.Domain.csproj|solutionrelative:fasttech.lojacardapio.domain\\enums\\categoryenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.application\\dtos\\stores\\updatestoredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|solutionrelative:fasttech.lojacardapio.application\\dtos\\stores\\updatestoredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{998E5C28-3F91-4896-8CE4-AEB035716A2A}|FastTech.LojaCardapio.Domain\\FastTech.LojaCardapio.Domain.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.domain\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,62 +70,205 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StoresEntity.cs",
-              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Entities\\StoresEntity.cs",
-              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Domain\\Entities\\StoresEntity.cs",
-              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Entities\\StoresEntity.cs",
-              "RelativeToolTip": "FastTech.LojaCardapio.Domain\\Entities\\StoresEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T16:30:16.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CategoryEnums.cs",
-              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Enums\\CategoryEnums.cs",
-              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Domain\\Enums\\CategoryEnums.cs",
-              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Enums\\CategoryEnums.cs",
-              "RelativeToolTip": "FastTech.LojaCardapio.Domain\\Enums\\CategoryEnums.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T16:30:36.512Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BaseEntity.cs",
-              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Entities\\BaseEntity.cs",
-              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Domain\\Entities\\BaseEntity.cs",
-              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Entities\\BaseEntity.cs",
-              "RelativeToolTip": "FastTech.LojaCardapio.Domain\\Entities\\BaseEntity.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAgwBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T15:33:51.164Z",
+              "DocumentIndex": 2,
+              "Title": "FastTech.LojaCardapio.Web",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj",
+              "RelativeToolTip": "FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-10T19:07:44.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\appsettings.json",
+              "RelativeToolTip": "FastTech.LojaCardapio.Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-10T19:05:02.007Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MenuItemsEntity.cs",
-              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Entities\\MenuItemsEntity.cs",
-              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Domain\\Entities\\MenuItemsEntity.cs",
-              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Entities\\MenuItemsEntity.cs",
-              "RelativeToolTip": "FastTech.LojaCardapio.Domain\\Entities\\MenuItemsEntity.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwBwAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\Program.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\Program.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Web\\Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAYwCkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T15:26:57.669Z",
+              "WhenOpened": "2025-06-10T19:00:26.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Dtos\\ResponseDto.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Application\\Dtos\\ResponseDto.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Dtos\\ResponseDto.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Application\\Dtos\\ResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:52:08.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CardapioController.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\Controllers\\CardapioController.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Web\\Controllers\\CardapioController.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\Controllers\\CardapioController.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Web\\Controllers\\CardapioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:47:27.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LojaController.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\Controllers\\LojaController.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Web\\Controllers\\LojaController.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\Controllers\\LojaController.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Web\\Controllers\\LojaController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAIwDIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:45:28.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IAsyncRabbitMqProducer.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Interfaces\\IAsyncRabbitMqProducer.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Application\\Interfaces\\IAsyncRabbitMqProducer.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Interfaces\\IAsyncRabbitMqProducer.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Application\\Interfaces\\IAsyncRabbitMqProducer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:40:18.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RabbitMQSettings.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Infra\\RabbitMq\\RabbitMQSettings.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Infra\\RabbitMq\\RabbitMQSettings.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Infra\\RabbitMq\\RabbitMQSettings.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Infra\\RabbitMq\\RabbitMQSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:40:03.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RabbitMqProducer.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Infra\\RabbitMq\\RabbitMqProducer.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Infra\\RabbitMq\\RabbitMqProducer.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Infra\\RabbitMq\\RabbitMqProducer.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Infra\\RabbitMq\\RabbitMqProducer.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowA4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:37:56.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MenuItemsServices.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Services\\MenuItemsServices.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Application\\Services\\MenuItemsServices.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Services\\MenuItemsServices.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Application\\Services\\MenuItemsServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:32:11.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "StoresEntity.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Entities\\StoresEntity.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Domain\\Entities\\StoresEntity.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Entities\\StoresEntity.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Domain\\Entities\\StoresEntity.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:17:58.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Entities\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Domain\\Entities\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Domain\\Entities\\BaseEntity.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Domain\\Entities\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:17:44.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UpdateStoreDto.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Dtos\\Stores\\UpdateStoreDto.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Application\\Dtos\\Stores\\UpdateStoreDto.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Dtos\\Stores\\UpdateStoreDto.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Application\\Dtos\\Stores\\UpdateStoreDto.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAowBwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:15:12.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StoresService.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Services\\StoresService.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Application\\Services\\StoresService.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Services\\StoresService.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Application\\Services\\StoresService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:10:12.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IStoresService.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Interfaces\\IStoresService.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Application\\Interfaces\\IStoresService.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Interfaces\\IStoresService.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Application\\Interfaces\\IStoresService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T18:10:27.445Z",
               "EditorCaption": ""
             }
           ]

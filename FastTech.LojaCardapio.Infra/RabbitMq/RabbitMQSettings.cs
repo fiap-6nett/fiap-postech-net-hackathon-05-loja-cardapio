@@ -1,6 +1,6 @@
 ﻿namespace FastTech.LojaCardapio.Infra.RabbitMq
 {
-    class RabbitMQSettings
+    public class RabbitMQSettings
     {
         public string Host { get; set; } = string.Empty;
         public int Port { get; set; }

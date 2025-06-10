@@ -7,14 +7,30 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "FastTech.LojaCardapio.Application/1.0.0": {
+        "dependencies": {
+          "FastTech.LojaCardapio.Domain": "1.0.0"
+        },
         "runtime": {
           "FastTech.LojaCardapio.Application.dll": {}
+        }
+      },
+      "FastTech.LojaCardapio.Domain/1.0.0": {
+        "runtime": {
+          "FastTech.LojaCardapio.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "FastTech.LojaCardapio.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FastTech.LojaCardapio.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

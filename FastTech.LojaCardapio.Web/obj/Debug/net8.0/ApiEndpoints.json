@@ -2,7 +2,7 @@
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.CardapioController",
     "Method": "GetCardapio",
-    "RelativePath": "api/Cardapio",
+    "RelativePath": "api/v1.0/Cardapio",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -12,7 +12,7 @@
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.CardapioController",
     "Method": "CreateCardapio",
-    "RelativePath": "api/Cardapio",
+    "RelativePath": "api/v1.0/Cardapio",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -28,7 +28,7 @@
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.CardapioController",
     "Method": "GetCardapioById",
-    "RelativePath": "api/Cardapio/{id}",
+    "RelativePath": "api/v1.0/Cardapio/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -44,7 +44,7 @@
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.CardapioController",
     "Method": "UpdateCardapio",
-    "RelativePath": "api/Cardapio/{id}",
+    "RelativePath": "api/v1.0/Cardapio/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -65,7 +65,7 @@
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.CardapioController",
     "Method": "DeleteCardapio",
-    "RelativePath": "api/Cardapio/{id}",
+    "RelativePath": "api/v1.0/Cardapio/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -80,18 +80,8 @@
   },
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.LojaController",
-    "Method": "GetLojas",
-    "RelativePath": "api/Loja",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FastTech.LojaCardapio.Web.Controllers.LojaController",
     "Method": "CreateLoja",
-    "RelativePath": "api/Loja",
+    "RelativePath": "api/v1.0/Loja",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -106,9 +96,9 @@
   },
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.LojaController",
-    "Method": "GetLojaById",
-    "RelativePath": "api/Loja/{id}",
-    "HttpMethod": "GET",
+    "Method": "DeleteLoja",
+    "RelativePath": "api/v1.0/Loja/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -123,38 +113,32 @@
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.LojaController",
     "Method": "UpdateLoja",
-    "RelativePath": "api/Loja/{id}",
+    "RelativePath": "api/v1.0/Loja/UpdateLoja",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "dto",
+        "Type": "FastTech.LojaCardapio.Application.Dtos.Stores.UpdateStoreDto",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FastTech.LojaCardapio.Application.Dtos.ResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
       },
       {
-        "Name": "loja",
-        "Type": "System.Object",
-        "IsRequired": true
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
       }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FastTech.LojaCardapio.Web.Controllers.LojaController",
-    "Method": "DeleteLoja",
-    "RelativePath": "api/Loja/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
+    ]
   }
 ]

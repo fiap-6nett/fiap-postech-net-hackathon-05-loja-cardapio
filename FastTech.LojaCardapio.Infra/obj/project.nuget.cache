@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "KPSpARzQeWA=",
+  "dgSpecHash": "HR+nxnqGX7o=",
   "success": true,
   "projectFilePath": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Infra\\FastTech.LojaCardapio.Infra.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\cleber.pacheco\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.5\\microsoft.extensions.dependencyinjection.abstractions.9.0.5.nupkg.sha512",
+    "C:\\Users\\cleber.pacheco\\.nuget\\packages\\microsoft.extensions.options\\9.0.5\\microsoft.extensions.options.9.0.5.nupkg.sha512",
+    "C:\\Users\\cleber.pacheco\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.5\\microsoft.extensions.primitives.9.0.5.nupkg.sha512",
+    "C:\\Users\\cleber.pacheco\\.nuget\\packages\\rabbitmq.client\\7.1.2\\rabbitmq.client.7.1.2.nupkg.sha512",
+    "C:\\Users\\cleber.pacheco\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
+    "C:\\Users\\cleber.pacheco\\.nuget\\packages\\system.threading.ratelimiting\\8.0.0\\system.threading.ratelimiting.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

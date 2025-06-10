@@ -10,3 +10,7 @@ C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio
 C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Application\obj\Debug\net8.0\refint\FastTech.LojaCardapio.Application.dll
 C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Application\obj\Debug\net8.0\FastTech.LojaCardapio.Application.pdb
 C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Application\obj\Debug\net8.0\ref\FastTech.LojaCardapio.Application.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Application\bin\Debug\net8.0\FastTech.LojaCardapio.Domain.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Application\bin\Debug\net8.0\FastTech.LojaCardapio.Domain.pdb
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Application\obj\Debug\net8.0\FastTech.LojaCardapio.Application.csproj.AssemblyReference.cache
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Application\obj\Debug\net8.0\FastTech.8A608264.Up2Date

@@ -2,7 +2,7 @@
 
 namespace FastTech.LojaCardapio.Web.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1.0/[controller]")]
     public class CardapioController : ControllerBase
     {
         //Buscar todos

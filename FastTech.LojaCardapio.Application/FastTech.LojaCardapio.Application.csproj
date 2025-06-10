@@ -8,7 +8,10 @@
 
   <ItemGroup>
     <Folder Include="Dtos\MenuItems\" />
-    <Folder Include="Dtos\Stores\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FastTech.LojaCardapio.Domain\FastTech.LojaCardapio.Domain.csproj" />
   </ItemGroup>
 
 </Project>

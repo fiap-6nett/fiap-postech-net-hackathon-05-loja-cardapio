@@ -10,3 +10,9 @@ C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio
 C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\refint\FastTech.LojaCardapio.Infra.dll
 C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\FastTech.LojaCardapio.Infra.pdb
 C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\ref\FastTech.LojaCardapio.Infra.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\bin\Debug\net8.0\FastTech.LojaCardapio.Application.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\bin\Debug\net8.0\FastTech.LojaCardapio.Domain.dll
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\bin\Debug\net8.0\FastTech.LojaCardapio.Application.pdb
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\bin\Debug\net8.0\FastTech.LojaCardapio.Domain.pdb
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\FastTech.LojaCardapio.Infra.csproj.AssemblyReference.cache
+C:\Users\cleber.pacheco\source\repos\FastTech.LojaCardapio\FastTech.LojaCardapio.Infra\obj\Debug\net8.0\FastTech.B8224985.Up2Date
