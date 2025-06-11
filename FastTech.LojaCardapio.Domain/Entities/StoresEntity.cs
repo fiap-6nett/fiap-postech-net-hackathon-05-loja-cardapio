@@ -40,6 +40,11 @@
             Location = location;
         }
 
+        public void SetIsAvailable(bool isAvailable)
+        {
+            IsAvailable = isAvailable;
+        }
+
         #endregion
     }
 

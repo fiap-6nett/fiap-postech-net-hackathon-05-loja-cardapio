@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
 using System.Text.Json;
 using System.Text;
+using FastTech.LojaCardapio.Application.Configurations;
 
 namespace FastTech.LojaCardapio.Infra.RabbitMq
 {
@@ -14,7 +15,7 @@ namespace FastTech.LojaCardapio.Infra.RabbitMq
         {
             _settings = settings.Value;
         }
-        public async Task EnviarMensagem(object mensagem)
+        public async Task EnviarMensagem(string nomeDaFila, object mensagem)
         {
             var factory = new ConnectionFactory
             {
@@ -28,7 +29,7 @@ namespace FastTech.LojaCardapio.Infra.RabbitMq
             using var channel = await connection.CreateChannelAsync();
 
             await channel.QueueDeclareAsync(
-                queue: _settings.QueueName,
+                queue: nomeDaFila,
                 durable: true,
                 exclusive: false,
                 autoDelete: false,
@@ -40,9 +41,11 @@ namespace FastTech.LojaCardapio.Infra.RabbitMq
 
             await channel.BasicPublishAsync(
                 exchange: "",
-                routingKey: _settings.QueueName,
+                routingKey: nomeDaFila,
                 body: body
                 );
         }
+
+
     }
 }

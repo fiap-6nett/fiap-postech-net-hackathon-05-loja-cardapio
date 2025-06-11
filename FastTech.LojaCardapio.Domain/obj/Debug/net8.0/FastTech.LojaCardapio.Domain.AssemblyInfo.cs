@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FastTech.LojaCardapio.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ceae9f16945da0127bd49c307f8d4f0d78f6bf00")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8178835debfcae4caae775266111499ecc6527dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("FastTech.LojaCardapio.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FastTech.LojaCardapio.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

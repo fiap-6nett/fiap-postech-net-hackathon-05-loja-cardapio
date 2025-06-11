@@ -2,6 +2,6 @@
 {
     public interface IAsyncRabbitMqProducer
     {
-        Task EnviarMensagem(object mensagem);
+        Task EnviarMensagem(string nomeDaFila, object mensagem);
     }
 }

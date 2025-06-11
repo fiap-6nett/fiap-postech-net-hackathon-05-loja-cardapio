@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OeenuxMqc7I=",
+  "dgSpecHash": "ZB1ROGDNp8M=",
   "success": true,
   "projectFilePath": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\cleber.pacheco\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.6\\microsoft.extensions.dependencyinjection.abstractions.9.0.6.nupkg.sha512",
+    "C:\\Users\\cleber.pacheco\\.nuget\\packages\\microsoft.extensions.options\\9.0.6\\microsoft.extensions.options.9.0.6.nupkg.sha512",
+    "C:\\Users\\cleber.pacheco\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.6\\microsoft.extensions.primitives.9.0.6.nupkg.sha512"
+  ],
   "logs": []
 }

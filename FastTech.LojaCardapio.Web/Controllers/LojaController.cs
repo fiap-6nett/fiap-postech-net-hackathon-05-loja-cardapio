@@ -1,7 +1,9 @@
 ﻿using FastTech.LojaCardapio.Application.Dtos;
 using FastTech.LojaCardapio.Application.Dtos.Stores;
 using FastTech.LojaCardapio.Application.Interfaces;
+using FastTech.LojaCardapio.Infra.RabbitMq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace FastTech.LojaCardapio.Web.Controllers
 {
@@ -16,17 +18,52 @@ namespace FastTech.LojaCardapio.Web.Controllers
             _logger = logger;
             _storesService = storesService;
         }
-
+        /// <summary>
+        /// Envie a loja para a fila que será criada.
+        /// </summary>
+        /// <param name="dto">Dados da loja a serem criados.</param>
+        /// <returns>Retorna o ID.</returns>
+        /// <response code="200">Loja criada com sucesso</response>
+        /// <response code="400">Dados inválidos</response>
         //Cadastrar
-        [HttpPost]
-        public IActionResult CreateLoja([FromBody] object loja)
+        [HttpPost("[action]")]
+        public async Task<IActionResult> CreateLoja([FromBody] CreateStoreDto dto)
         {
-            if (loja == null)
+            try
             {
-                return BadRequest("Dados inválidos.");
+                _logger.LogInformation($"Acessou {nameof(CreateStoreDto)}. Entrada: {dto}");
+
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogWarning($"Dados inválidos - Entrada: {dto}");
+                    return BadRequest(ModelState);
+                }
+
+                await _storesService.CreateStoreAsync(dto);
+                _logger.LogInformation($"Dados Enviados para fila com sucesso");
+
+                var response = new ResponseDto()
+                {
+                    Id = dto.IdStore,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                return Ok(response);
             }
-            return Ok(); // Retorne a loja criada
+            catch (Exception ex)
+            {
+                _logger.LogError($"Falha no endpoint CreateLoja. Erro{ex}");
+                return StatusCode(500, $"Internal server error - {ex}");
+            }
         }
+
+        /// <summary>
+        /// Envia a loja para a fila que será atualizado.
+        /// </summary>
+        /// <param name="dto">Dados da loja a serem atualizados.</param>
+        /// <returns>Retorna o ID.</returns>
+        /// <response code="200">Loja atualizada com sucesso</response>
+        /// <response code="400">Dados inválidos</response>
         //Atualizar
         [HttpPut("[action]")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
@@ -49,7 +86,6 @@ namespace FastTech.LojaCardapio.Web.Controllers
                 var response = new ResponseDto()
                 {
                     Id = dto.IdStore,
-                    CreatedAt = DateTime.UtcNow
                 };
 
                 return Ok(response);
@@ -61,19 +97,43 @@ namespace FastTech.LojaCardapio.Web.Controllers
                 return StatusCode(500, $"Internal server error - {ex}");
             }
         }
+        /// <summary>
+        /// Envia a loja para a fila que será atualizado o status IsAvailable.
+        /// </summary>
+        /// <param name="dto">Status da loja a serem atualizados.</param>
+        /// <returns>Retorna o ID.</returns>
+        /// <response code="200">Status da Loja atualizada com sucesso</response>
+        /// <response code="400">Dados inválidos</response>
         //Deletar
-        [HttpDelete("{id}")]
-        public IActionResult DeleteLoja(int id)
+        [HttpPut(("[action]"))]
+        public async Task<IActionResult> UpdateStatusLoja([FromBody] UpdateStoreStatusDto dto)
         {
-            if (id <= 0)
+            try
             {
-                return BadRequest("ID inválido.");
+                _logger.LogInformation($"Acessou {nameof(UpdateStoreStatusDto)}. Entrada: {dto}");
+
+                if (!ModelState.IsValid)
+                {
+    
+                    _logger.LogWarning($"Dados inválidos - Entrada: {dto}");
+                    return BadRequest(ModelState);
+                }
+
+                await _storesService.UpdateStoreStatusAsync(dto);
+                _logger.LogInformation($"Dados Enviados para fila com sucesso");
+
+                var response = new ResponseDto()
+                {
+                    Id = dto.IdStore,
+                };
+
+                return Ok(response);
             }
-            // Aqui você deletaria a loja pelo ID
-            // Exemplo: var deleted = _lojaService.Delete(id);
-            // Se a loja não for encontrada, retorne NotFound
-            // if (!deleted) return NotFound();
-            return Ok(); // Retorne sucesso na deleção
+            catch (Exception ex)
+            {
+                _logger.LogError($"Falha no endpoint UpdateStatusLoja. Erro{ex}");
+                return StatusCode(500, $"Internal server error - {ex}");
+            }
         }
     }
 }

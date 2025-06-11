@@ -1,3 +1,4 @@
+using FastTech.LojaCardapio.Application.Configurations;
 using FastTech.LojaCardapio.Application.Interfaces;
 using FastTech.LojaCardapio.Application.Services;
 using FastTech.LojaCardapio.Infra.RabbitMq;

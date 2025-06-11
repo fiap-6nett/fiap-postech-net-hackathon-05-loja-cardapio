@@ -4,5 +4,32 @@
         <name>FastTech.LojaCardapio.Web</name>
     </assembly>
     <members>
+        <member name="M:FastTech.LojaCardapio.Web.Controllers.LojaController.CreateLoja(FastTech.LojaCardapio.Application.Dtos.Stores.CreateStoreDto)">
+            <summary>
+            Envie a loja para a fila que será criada.
+            </summary>
+            <param name="dto">Dados da loja a serem criados.</param>
+            <returns>Retorna o ID.</returns>
+            <response code="200">Loja criada com sucesso</response>
+            <response code="400">Dados inválidos</response>
+        </member>
+        <member name="M:FastTech.LojaCardapio.Web.Controllers.LojaController.UpdateLoja(FastTech.LojaCardapio.Application.Dtos.Stores.UpdateStoreDto)">
+            <summary>
+            Envia a loja para a fila que será atualizado.
+            </summary>
+            <param name="dto">Dados da loja a serem atualizados.</param>
+            <returns>Retorna o ID.</returns>
+            <response code="200">Loja atualizada com sucesso</response>
+            <response code="400">Dados inválidos</response>
+        </member>
+        <member name="M:FastTech.LojaCardapio.Web.Controllers.LojaController.UpdateStatusLoja(FastTech.LojaCardapio.Application.Dtos.Stores.UpdateStoreStatusDto)">
+            <summary>
+            Envia a loja para a fila que será atualizado o status IsAvailable.
+            </summary>
+            <param name="dto">Status da loja a serem atualizados.</param>
+            <returns>Retorna o ID.</returns>
+            <response code="200">Status da Loja atualizada com sucesso</response>
+            <response code="400">Dados inválidos</response>
+        </member>
     </members>
 </doc>
