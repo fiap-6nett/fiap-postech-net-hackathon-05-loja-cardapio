@@ -12,22 +12,6 @@ namespace FastTech.LojaCardapio.Domain.Entities
         public decimal Price { get; private set; }
         public CategoryEnums Category { get; private set; }
 
-        public MenuItemsEntity() : base()
-        { 
-
-        }
-        public MenuItemsEntity(Guid idStore, string name, string description, decimal price, CategoryEnums category) : base()
-        {
-            IdMenuItem = Guid.NewGuid();
-            IdStore = idStore;
-            Name = name;
-            Description = description;
-            Price = price;
-            Category = category;
-        }
-
-
-
         #region validações
 
         public void SetIdStore(Guid idStore)
@@ -54,7 +38,7 @@ namespace FastTech.LojaCardapio.Domain.Entities
             }
         }
 
-        public void SetName(string name, DateTime lastUpdatedAt)
+        public void SetName(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Name cannot be empty or null.");
@@ -84,6 +68,11 @@ namespace FastTech.LojaCardapio.Domain.Entities
             if (!Enum.IsDefined(typeof(CategoryEnums), (int) category))
                 throw new ArgumentException("Invalid category.");
             Category = category;
+        }
+
+        public void SetIsAvailable(bool isAvailable)
+        {
+            IsAvailable = isAvailable;
         }
 
 

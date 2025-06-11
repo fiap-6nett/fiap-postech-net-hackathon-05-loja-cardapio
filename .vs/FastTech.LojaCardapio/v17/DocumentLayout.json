@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.application\\services\\storesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66C2EE33-ED05-4294-944D-76754CA0B448}|FastTech.LojaCardapio.Application\\FastTech.LojaCardapio.Application.csproj|solutionrelative:fasttech.lojacardapio.application\\services\\storesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|c:\\users\\cleber.pacheco\\source\\repos\\fasttech.lojacardapio\\fasttech.lojacardapio.web\\controllers\\lojacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40B7335C-9FBB-4ED7-AA60-92E2AC784D2E}|FastTech.LojaCardapio.Web\\FastTech.LojaCardapio.Web.csproj|solutionrelative:fasttech.lojacardapio.web\\controllers\\lojacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StoresService.cs",
-              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Services\\StoresService.cs",
-              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Application\\Services\\StoresService.cs",
-              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Application\\Services\\StoresService.cs",
-              "RelativeToolTip": "FastTech.LojaCardapio.Application\\Services\\StoresService.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAADwvzQAAAAMAAAAAAAAAA==",
+              "Title": "LojaController.cs",
+              "DocumentMoniker": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\Controllers\\LojaController.cs",
+              "RelativeDocumentMoniker": "FastTech.LojaCardapio.Web\\Controllers\\LojaController.cs",
+              "ToolTip": "C:\\Users\\cleber.pacheco\\source\\repos\\FastTech.LojaCardapio\\FastTech.LojaCardapio.Web\\Controllers\\LojaController.cs",
+              "RelativeToolTip": "FastTech.LojaCardapio.Web\\Controllers\\LojaController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T15:45:10.084Z",
+              "WhenOpened": "2025-06-11T19:02:04.202Z",
               "EditorCaption": ""
             }
           ]

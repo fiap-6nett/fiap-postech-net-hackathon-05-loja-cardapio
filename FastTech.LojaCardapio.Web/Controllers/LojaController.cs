@@ -1,9 +1,7 @@
 ﻿using FastTech.LojaCardapio.Application.Dtos;
 using FastTech.LojaCardapio.Application.Dtos.Stores;
 using FastTech.LojaCardapio.Application.Interfaces;
-using FastTech.LojaCardapio.Infra.RabbitMq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 
 namespace FastTech.LojaCardapio.Web.Controllers
 {
@@ -12,7 +10,6 @@ namespace FastTech.LojaCardapio.Web.Controllers
     {
         private readonly ILogger<LojaController> _logger;
         private readonly IStoresService _storesService;
-
         public LojaController(ILogger<LojaController> logger, IStoresService storesService)
         {
             _logger = logger;
@@ -21,12 +18,10 @@ namespace FastTech.LojaCardapio.Web.Controllers
         /// <summary>
         /// Envie a loja para a fila que será criada.
         /// </summary>
-        /// <param name="dto">Dados da loja a serem criados.</param>
-        /// <returns>Retorna o ID.</returns>
-        /// <response code="200">Loja criada com sucesso</response>
-        /// <response code="400">Dados inválidos</response>
         //Cadastrar
         [HttpPost("[action]")]
+        [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> CreateLoja([FromBody] CreateStoreDto dto)
         {
             try
@@ -60,10 +55,6 @@ namespace FastTech.LojaCardapio.Web.Controllers
         /// <summary>
         /// Envia a loja para a fila que será atualizado.
         /// </summary>
-        /// <param name="dto">Dados da loja a serem atualizados.</param>
-        /// <returns>Retorna o ID.</returns>
-        /// <response code="200">Loja atualizada com sucesso</response>
-        /// <response code="400">Dados inválidos</response>
         //Atualizar
         [HttpPut("[action]")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
@@ -100,12 +91,10 @@ namespace FastTech.LojaCardapio.Web.Controllers
         /// <summary>
         /// Envia a loja para a fila que será atualizado o status IsAvailable.
         /// </summary>
-        /// <param name="dto">Status da loja a serem atualizados.</param>
-        /// <returns>Retorna o ID.</returns>
-        /// <response code="200">Status da Loja atualizada com sucesso</response>
-        /// <response code="400">Dados inválidos</response>
-        //Deletar
+        //UpdateStatus
         [HttpPut(("[action]"))]
+        [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> UpdateStatusLoja([FromBody] UpdateStoreStatusDto dto)
         {
             try
@@ -114,7 +103,7 @@ namespace FastTech.LojaCardapio.Web.Controllers
 
                 if (!ModelState.IsValid)
                 {
-    
+
                     _logger.LogWarning($"Dados inválidos - Entrada: {dto}");
                     return BadRequest(ModelState);
                 }

@@ -10,7 +10,6 @@ namespace FastTech.LojaCardapio.Infra.RabbitMq
     public class RabbitMqProducer : IAsyncRabbitMqProducer
     {
         private readonly RabbitMQSettings _settings;
-
         public RabbitMqProducer(IOptions<RabbitMQSettings> settings)
         {
             _settings = settings.Value;
@@ -45,7 +44,5 @@ namespace FastTech.LojaCardapio.Infra.RabbitMq
                 body: body
                 );
         }
-
-
     }
 }

@@ -5,184 +5,34 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/v1.0/Cardapio": {
-      "get": {
-        "tags": [
-          "Cardapio"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/api/v1.0/Cardapio/CreateCardapio": {
       "post": {
         "tags": [
           "Cardapio"
         ],
+        "summary": "Envie o cardápio para a fila que será criada.",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": { }
-            },
-            "text/json": {
-              "schema": { }
-            },
-            "application/*+json": {
-              "schema": { }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1.0/Cardapio/{id}": {
-      "get": {
-        "tags": [
-          "Cardapio"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Cardapio"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": { }
-            },
-            "text/json": {
-              "schema": { }
-            },
-            "application/*+json": {
-              "schema": { }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Cardapio"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1.0/Loja/CreateLoja": {
-      "post": {
-        "tags": [
-          "Loja"
-        ],
-        "summary": "Envie a loja para a fila que será criada.",
-        "requestBody": {
-          "description": "Dados da loja a serem criados.",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateStoreDto"
+                "$ref": "#/components/schemas/CreateMenuItemsDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateStoreDto"
+                "$ref": "#/components/schemas/CreateMenuItemsDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateStoreDto"
+                "$ref": "#/components/schemas/CreateMenuItemsDto"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Loja criada com sucesso"
-          },
-          "400": {
-            "description": "Dados inválidos"
-          }
-        }
-      }
-    },
-    "/api/v1.0/Loja/UpdateLoja": {
-      "put": {
-        "tags": [
-          "Loja"
-        ],
-        "summary": "Envia a loja para a fila que será atualizado.",
-        "requestBody": {
-          "description": "Dados da loja a serem atualizados.",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateStoreDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateStoreDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateStoreDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Loja atualizada com sucesso",
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
@@ -202,7 +52,215 @@
             }
           },
           "400": {
-            "description": "Dados inválidos"
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/v1.0/Cardapio/UpdateCardapio": {
+      "put": {
+        "tags": [
+          "Cardapio"
+        ],
+        "summary": "Envia o cardápio para a fila que será atualizado.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMenuItemsDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMenuItemsDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMenuItemsDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/v1.0/Cardapio/UpdateStatusCardapio": {
+      "put": {
+        "tags": [
+          "Cardapio"
+        ],
+        "summary": "Envia o cardápio para a fila que será atualizado o status IsAvailable.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMenuItemsStatusDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMenuItemsStatusDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMenuItemsStatusDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/v1.0/Loja/CreateLoja": {
+      "post": {
+        "tags": [
+          "Loja"
+        ],
+        "summary": "Envie a loja para a fila que será criada.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateStoreDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateStoreDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateStoreDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/v1.0/Loja/UpdateLoja": {
+      "put": {
+        "tags": [
+          "Loja"
+        ],
+        "summary": "Envia a loja para a fila que será atualizado.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       }
@@ -214,7 +272,6 @@
         ],
         "summary": "Envia a loja para a fila que será atualizado o status IsAvailable.",
         "requestBody": {
-          "description": "Status da loja a serem atualizados.",
           "content": {
             "application/json": {
               "schema": {
@@ -235,10 +292,27 @@
         },
         "responses": {
           "200": {
-            "description": "Status da Loja atualizada com sucesso"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              }
+            }
           },
           "400": {
-            "description": "Dados inválidos"
+            "description": "Bad Request"
           }
         }
       }
@@ -246,6 +320,72 @@
   },
   "components": {
     "schemas": {
+      "CategoryEnums": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CreateMenuItemsDto": {
+        "required": [
+          "category",
+          "createdAt",
+          "description",
+          "idMenuItem",
+          "idStore",
+          "lastUpdatedAt",
+          "name",
+          "price"
+        ],
+        "type": "object",
+        "properties": {
+          "idMenuItem": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idStore": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 3,
+            "pattern": "^[A-Za-zÀ-ÿ\\s]+$",
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 200,
+            "minLength": 3,
+            "pattern": "^[A-Za-zÀ-ÿ\\s]+$",
+            "type": "string"
+          },
+          "price": {
+            "maximum": 10000,
+            "minimum": 0,01,
+            "type": "number",
+            "format": "double"
+          },
+          "category": {
+            "$ref": "#/components/schemas/CategoryEnums"
+          },
+          "lastUpdatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isAvailable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateStoreDto": {
         "required": [
           "createdAt",
@@ -296,6 +436,79 @@
           "createdAt": {
             "type": "string",
             "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateMenuItemsDto": {
+        "required": [
+          "category",
+          "description",
+          "idMenuItem",
+          "idStore",
+          "lastUpdatedAt",
+          "name",
+          "price"
+        ],
+        "type": "object",
+        "properties": {
+          "idMenuItem": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idStore": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 3,
+            "pattern": "^[A-Za-zÀ-ÿ\\s]+$",
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 200,
+            "minLength": 3,
+            "pattern": "^[A-Za-zÀ-ÿ\\s]+$",
+            "type": "string"
+          },
+          "price": {
+            "maximum": 10000,
+            "minimum": 0,01,
+            "type": "number",
+            "format": "double"
+          },
+          "category": {
+            "$ref": "#/components/schemas/CategoryEnums"
+          },
+          "lastUpdatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateMenuItemsStatusDto": {
+        "required": [
+          "idMenuItem",
+          "idStore"
+        ],
+        "type": "object",
+        "properties": {
+          "idMenuItem": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idStore": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "lastUpdatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isAvailable": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

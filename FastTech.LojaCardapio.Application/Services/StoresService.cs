@@ -10,14 +10,12 @@ namespace FastTech.LojaCardapio.Application.Services
     {
         private readonly IAsyncRabbitMqProducer _asyncRabbitMqProducer;
         private readonly RabbitMQSettings _settings;
-
         public StoresService(IAsyncRabbitMqProducer asyncRabbitMqProducer,
             IOptions<RabbitMQSettings> settings)
         {
             _asyncRabbitMqProducer = asyncRabbitMqProducer;
             _settings = settings.Value;
         }
-
         public Task CreateStoreAsync(CreateStoreDto dto)
         {
             var id = Guid.NewGuid();
@@ -42,7 +40,6 @@ namespace FastTech.LojaCardapio.Application.Services
             _asyncRabbitMqProducer.EnviarMensagem(_settings.Queues.StoreUpdate, store);
 
             return Task.CompletedTask;
-
         }
 
         public Task UpdateStoreStatusAsync(UpdateStoreStatusDto dto)

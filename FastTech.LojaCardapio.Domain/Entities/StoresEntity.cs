@@ -7,7 +7,6 @@
         public string Location { get; private set; }
 
         #region validações
-
         public void SetIdStore(Guid idStore)
         {
             try

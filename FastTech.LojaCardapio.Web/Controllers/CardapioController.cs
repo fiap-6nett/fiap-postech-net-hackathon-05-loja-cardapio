@@ -1,73 +1,133 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FastTech.LojaCardapio.Application.Dtos;
+using FastTech.LojaCardapio.Application.Dtos.MenuItems;
+using FastTech.LojaCardapio.Application.Dtos.Stores;
+using FastTech.LojaCardapio.Application.Interfaces;
+using FastTech.LojaCardapio.Application.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FastTech.LojaCardapio.Web.Controllers
 {
     [Route("api/v1.0/[controller]")]
     public class CardapioController : ControllerBase
     {
-        //Buscar todos
-        [HttpGet]
-        public IActionResult GetCardapio()
+        private readonly ILogger<CardapioController> _logger;
+        private readonly IMenuItensService _menuItensService;
+        public CardapioController(ILogger<CardapioController> logger, IMenuItensService menuItensService)
         {
-
-            return Ok();
+            _logger = logger;
+            _menuItensService = menuItensService;
         }
 
-        //Buscar por id
-        [HttpGet("{id}")]
-        public IActionResult GetCardapioById(int id)
-        {
-            if (id <= 0)
-            {
-                return BadRequest("ID inválido.");
-            }
-            // Aqui você buscaria o item do cardápio pelo ID
-            // Exemplo: var item = _cardapioService.GetById(id);
-            // Se o item não for encontrado, retorne NotFound
-            // if (item == null) return NotFound();
-            return Ok(); // Retorne o item encontrado
-        }
-
+        /// <summary>
+        /// Envie o cardápio para a fila que será criada.
+        /// </summary>
         //Cadastrar
-        [HttpPost]
-        public IActionResult CreateCardapio([FromBody] object cardapio)
+        [HttpPost("[action]")]
+        [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> CreateCardapio([FromBody] CreateMenuItemsDto dto)
         {
-            if (cardapio == null)
+            try
             {
-                return BadRequest("Dados inválidos.");
-            }
+                _logger.LogInformation($"Acessou {nameof(CreateMenuItemsDto)}. Entrada: {dto}");
 
-            return Ok(); // Retorne o item criado
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogWarning($"Dados inválidos - Entrada: {dto}");
+                    return BadRequest(ModelState);
+                }
+
+                await _menuItensService.CreateMenuItemsAsync(dto);
+                _logger.LogInformation($"Dados Enviados para fila com sucesso");
+
+                var response = new ResponseDto()
+                {
+                    Id = dto.IdStore,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Falha no endpoint CreateCardapio. Erro{ex}");
+                return StatusCode(500, $"Internal server error - {ex}");
+            }
         }
 
+        /// <summary>
+        /// Envia o cardápio para a fila que será atualizado.
+        /// </summary>
         //Atualizar
-        [HttpPut("{id}")]
-        public IActionResult UpdateCardapio(int id, [FromBody] object cardapio)
+        [HttpPut("[action]")]
+        [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> UpdateCardapio([FromBody] UpdateMenuItemsDto dto)
         {
-            if (id <= 0 || cardapio == null)
+            try
             {
-                return BadRequest("Dados inválidos.");
+                _logger.LogInformation($"Acessou {nameof(UpdateMenuItemsDto)}. Entrada: {dto}");
+
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogWarning($"Dados inválidos - Entrada: {dto}");
+                    return BadRequest(ModelState);
+                }
+
+                await _menuItensService.UpdateMenuItemsAsync(dto);
+                _logger.LogInformation($"Dados Enviados para fila com sucesso");
+
+                var response = new ResponseDto()
+                {
+                    Id = dto.IdMenuItem,
+
+                };
+
+                return Ok(response);
             }
-            // Aqui você atualizaria o item do cardápio pelo ID
-            // Exemplo: var updatedItem = _cardapioService.Update(id, cardapio);
-            // Se o item não for encontrado, retorne NotFound
-            // if (updatedItem == null) return NotFound();
-            return Ok(); // Retorne o item atualizado
+            catch (Exception ex)
+            {
+
+                _logger.LogError($"Falha no endpoint UpdateCardapio. Erro{ex}");
+                return StatusCode(500, $"Internal server error - {ex}");
+            }
         }
 
+        /// <summary>
+        /// Envia o cardápio para a fila que será atualizado o status IsAvailable.
+        /// </summary>
         //Deletar
-        [HttpDelete("{id}")]
-        public IActionResult DeleteCardapio(int id)
+        [HttpPut("[action]")]
+        [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> UpdateStatusCardapio([FromBody] UpdateMenuItemsStatusDto dto)
         {
-            if (id <= 0)
+            try
             {
-                return BadRequest("ID inválido.");
+                _logger.LogInformation($"Acessou {nameof(UpdateMenuItemsStatusDto)}. Entrada: {dto}");
+
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogWarning($"Dados inválidos - Entrada: {dto}");
+                    return BadRequest(ModelState);
+                }
+
+                await _menuItensService.UpdateMenuItemsStatusAsync(dto);
+                _logger.LogInformation($"Dados Enviados para fila com sucesso");
+
+                var response = new ResponseDto()
+                {
+                    Id = dto.IdMenuItem,
+                };
+
+                return Ok(response);
             }
-            // Aqui você deletaria o item do cardápio pelo ID
-            // Exemplo: var deleted = _cardapioService.Delete(id);
-            // Se o item não for encontrado, retorne NotFound
-            // if (!deleted) return NotFound();
-            return Ok(); // Retorne uma confirmação de exclusão
+            catch (Exception ex)
+            {
+                _logger.LogError($"Falha no endpoint UpdateStatusCardapio. Erro{ex}");
+                return StatusCode(500, $"Internal server error - {ex}");
+            }
         }
     }
 }
+

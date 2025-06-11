@@ -1,82 +1,96 @@
 [
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.CardapioController",
-    "Method": "GetCardapio",
-    "RelativePath": "api/v1.0/Cardapio",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FastTech.LojaCardapio.Web.Controllers.CardapioController",
     "Method": "CreateCardapio",
-    "RelativePath": "api/v1.0/Cardapio",
+    "RelativePath": "api/v1.0/Cardapio/CreateCardapio",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cardapio",
-        "Type": "System.Object",
+        "Name": "dto",
+        "Type": "FastTech.LojaCardapio.Application.Dtos.MenuItems.CreateMenuItemsDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FastTech.LojaCardapio.Web.Controllers.CardapioController",
-    "Method": "GetCardapioById",
-    "RelativePath": "api/v1.0/Cardapio/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+    "ReturnTypes": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
+        "Type": "FastTech.LojaCardapio.Application.Dtos.ResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
       }
-    ],
-    "ReturnTypes": []
+    ]
   },
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.CardapioController",
     "Method": "UpdateCardapio",
-    "RelativePath": "api/v1.0/Cardapio/{id}",
+    "RelativePath": "api/v1.0/Cardapio/UpdateCardapio",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "cardapio",
-        "Type": "System.Object",
+        "Name": "dto",
+        "Type": "FastTech.LojaCardapio.Application.Dtos.MenuItems.UpdateMenuItemsDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "FastTech.LojaCardapio.Application.Dtos.ResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ]
   },
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.CardapioController",
-    "Method": "DeleteCardapio",
-    "RelativePath": "api/v1.0/Cardapio/{id}",
-    "HttpMethod": "DELETE",
+    "Method": "UpdateStatusCardapio",
+    "RelativePath": "api/v1.0/Cardapio/UpdateStatusCardapio",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "dto",
+        "Type": "FastTech.LojaCardapio.Application.Dtos.MenuItems.UpdateMenuItemsStatusDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "FastTech.LojaCardapio.Application.Dtos.ResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ]
   },
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.LojaController",
@@ -92,7 +106,22 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "FastTech.LojaCardapio.Application.Dtos.ResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ]
   },
   {
     "ContainingType": "FastTech.LojaCardapio.Web.Controllers.LojaController",
@@ -139,6 +168,21 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "FastTech.LojaCardapio.Application.Dtos.ResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      }
+    ]
   }
 ]
