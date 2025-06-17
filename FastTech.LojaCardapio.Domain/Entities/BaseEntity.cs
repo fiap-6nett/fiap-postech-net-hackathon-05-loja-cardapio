@@ -2,8 +2,8 @@
 {
     public abstract class BaseEntity
     {
-        public bool? IsAvailable { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime? LastUpdatedAt { get; set; }
+        public bool IsAvailable { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
+        public DateTimeOffset? LastUpdatedAt { get; set; }
     }
 }

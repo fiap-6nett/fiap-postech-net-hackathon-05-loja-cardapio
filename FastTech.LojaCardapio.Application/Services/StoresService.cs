@@ -1,56 +1,88 @@
-﻿using FastTech.LojaCardapio.Application.Configurations;
-using FastTech.LojaCardapio.Application.Dtos.Stores;
-using FastTech.LojaCardapio.Application.Interfaces;
+﻿using FastTech.LojaCardapio.Application.Dtos.Stores;
+using FastTech.LojaCardapio.Application.Interfaces.Repository;
+using FastTech.LojaCardapio.Application.Interfaces.Services;
 using FastTech.LojaCardapio.Domain.Entities;
-using Microsoft.Extensions.Options;
+using FastTech.LojaCardapio.Domain.Exceptions;
 
 namespace FastTech.LojaCardapio.Application.Services
 {
     public class StoresService : IStoresService
     {
-        private readonly IAsyncRabbitMqProducer _asyncRabbitMqProducer;
-        private readonly RabbitMQSettings _settings;
-        public StoresService(IAsyncRabbitMqProducer asyncRabbitMqProducer,
-            IOptions<RabbitMQSettings> settings)
+        private readonly IStoreRepository _storeRepository;
+
+        public StoresService(IStoreRepository storeRepository)
         {
-            _asyncRabbitMqProducer = asyncRabbitMqProducer;
-            _settings = settings.Value;
+            _storeRepository = storeRepository;
         }
-        public Task CreateStoreAsync(CreateStoreDto dto)
-        {
-            var id = Guid.NewGuid();
+
+        public async Task CreateStoreAsync(CreateStoreDto dto)
+        {            
             var store = new StoresEntity();
-            store.SetIdStore(id);
-            store.SetName(dto.Name, dto.CreatedAt);
-            store.SetLocation(dto.Location, dto.CreatedAt);
+            store.SetIdStore(Guid.NewGuid());
+            store.SetName(dto.Name);
+            store.SetLocation(dto.Location);
+            store.SetCreatedAt(DateTime.UtcNow);
+            store.SetLastUpdatedAt(DateTime.UtcNow);
+            store.SetIsAvailable(true);
+
+            await _storeRepository.AddAsync(store);
+        }
+
+        public async Task<List<ResponseStoreDto>> GetAllAvailableStoresAsync()
+        {
+            var stores = await _storeRepository.GetAvailableAsync();
+            var response = stores.Select(s => new ResponseStoreDto
+            {
+                IdStore = s.IdStore,
+                Name = s.Name,
+                Location = s.Location,
+                CreatedAt = s.CreatedAt,
+                LastUpdatedAt = s.LastUpdatedAt
+            }).ToList();
+
+            return response;
+        }
+
+        public async Task<ResponseStoreDto> GetAvailableStoreByIdAsync(Guid id)
+        {
+            var store = await _storeRepository.GetByIdAsync(id);
+            if (store == null)
+                throw new NotFoundException("Loja não encontrada ou indisponível");
+
+            return new ResponseStoreDto
+            {
+                IdStore = store.IdStore,
+                Name = store.Name,
+                Location = store.Location,
+                CreatedAt = store.CreatedAt,
+                LastUpdatedAt = store.LastUpdatedAt
+            };
+        }
+
+        public async Task UpdateStoreAsync(UpdateStoreDto dto)
+        {
+            var store = await _storeRepository.GetByIdAsync(dto.IdStore);
+            if (store == null)
+                throw new NotFoundException("Loja não encontrada ou indisponível");
+
+            store.SetName(dto.Name);
+            store.SetLocation(dto.Location);
+            store.SetLastUpdatedAt(DateTime.UtcNow);
+
+            await _storeRepository.UpdateAsync(store);
+
+        }
+
+        public async Task UpdateStoreStatusAsync(UpdateStoreStatusDto dto)
+        {
+            var store = await _storeRepository.GetByIdAsync(dto.IdStore);
+            if (store == null)
+                throw new NotFoundException("Loja não encontrada ou indisponível");
+
             store.SetIsAvailable(dto.IsAvailable);
+            store.SetLastUpdatedAt(DateTime.UtcNow);
 
-            _asyncRabbitMqProducer.EnviarMensagem(_settings.Queues.StoreCreate, store);
-
-            return Task.CompletedTask;
-        }
-
-        public Task UpdateStoreAsync(UpdateStoreDto dto)
-        {
-            var store = new StoresEntity();
-            store.SetIdStore(dto.IdStore);
-            store.SetName(dto.Name, dto.LastUpdatedAt);
-            store.SetLocation(dto.Location, dto.LastUpdatedAt);
-
-            _asyncRabbitMqProducer.EnviarMensagem(_settings.Queues.StoreUpdate, store);
-
-            return Task.CompletedTask;
-        }
-
-        public Task UpdateStoreStatusAsync(UpdateStoreStatusDto dto)
-        {
-            var store = new StoresEntity();
-            store.SetIdStore(dto.IdStore);
-            store.SetIsAvailable(dto.IsAvailable);
-            
-            _asyncRabbitMqProducer.EnviarMensagem(_settings.Queues.StoreStatusUpdate, store);
-                    
-            return Task.CompletedTask; 
+            await _storeRepository.UpdateAsync(store);
         }
     }
 }

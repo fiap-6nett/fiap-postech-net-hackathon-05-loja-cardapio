@@ -1,6 +1,7 @@
 ﻿using FastTech.LojaCardapio.Application.Dtos;
 using FastTech.LojaCardapio.Application.Dtos.Stores;
-using FastTech.LojaCardapio.Application.Interfaces;
+using FastTech.LojaCardapio.Application.Interfaces.Services;
+using FastTech.LojaCardapio.Domain.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FastTech.LojaCardapio.Web.Controllers
@@ -15,13 +16,53 @@ namespace FastTech.LojaCardapio.Web.Controllers
             _logger = logger;
             _storesService = storesService;
         }
+
         /// <summary>
-        /// Envie a loja para a fila que será criada.
+        /// Busca Todas as lojas no banco de dados.
+        /// </summary>
+        [HttpGet("[action]")]
+        [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<List<ResponseStoreDto>>> GetAllAvailable()
+        {
+            var stores = await _storesService.GetAllAvailableStoresAsync();
+            return Ok(stores);
+        }
+
+        /// <summary>
+        /// Busca a loja por Id no banco de dados.
+        /// </summary>
+        [HttpGet("[action]/{id:guid}")]
+        [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ResponseStoreDto>> GetById(Guid id)
+        {
+            try
+            {
+                var store = await _storesService.GetAvailableStoreByIdAsync(id);
+                return Ok(store);
+            }
+            catch (NotFoundException ex)
+            {
+                _logger.LogError($"Loja não encontrada: {ex.Message}");
+                return NotFound(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+        }
+
+        /// <summary>
+        /// Cadastra uma nova loja no banco de dados.
         /// </summary>
         //Cadastrar
         [HttpPost("[action]")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> CreateLoja([FromBody] CreateStoreDto dto)
         {
             try
@@ -45,6 +86,11 @@ namespace FastTech.LojaCardapio.Web.Controllers
 
                 return Ok(response);
             }
+            catch (NotFoundException ex)
+            {
+                _logger.LogError($"Falha no endpoint CreateLoja. Erro: {ex.Message}");
+                return NotFound(ex.Message);
+            }
             catch (Exception ex)
             {
                 _logger.LogError($"Falha no endpoint CreateLoja. Erro{ex}");
@@ -53,12 +99,13 @@ namespace FastTech.LojaCardapio.Web.Controllers
         }
 
         /// <summary>
-        /// Envia a loja para a fila que será atualizado.
+        /// Atualiza a loja no Banco de dados.
         /// </summary>
         //Atualizar
         [HttpPut("[action]")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateLoja([FromBody] UpdateStoreDto dto)
         {
             try
@@ -81,6 +128,11 @@ namespace FastTech.LojaCardapio.Web.Controllers
 
                 return Ok(response);
             }
+            catch (NotFoundException ex)
+            {
+                _logger.LogError($"Falha no endpoint UpdateLoja. Erro: {ex.Message}");
+                return NotFound(ex.Message);
+            }
             catch (Exception ex)
             {
 
@@ -89,12 +141,13 @@ namespace FastTech.LojaCardapio.Web.Controllers
             }
         }
         /// <summary>
-        /// Envia a loja para a fila que será atualizado o status IsAvailable.
+        /// Altera o status da loja IsAvailable.
         /// </summary>
         //UpdateStatus
         [HttpPut(("[action]"))]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateStatusLoja([FromBody] UpdateStoreStatusDto dto)
         {
             try
@@ -117,6 +170,11 @@ namespace FastTech.LojaCardapio.Web.Controllers
                 };
 
                 return Ok(response);
+            }
+            catch (NotFoundException ex)
+            {
+                _logger.LogError($"Falha no endpoint UpdateStatusLoja. Erro: {ex.Message}");
+                return NotFound(ex.Message);
             }
             catch (Exception ex)
             {

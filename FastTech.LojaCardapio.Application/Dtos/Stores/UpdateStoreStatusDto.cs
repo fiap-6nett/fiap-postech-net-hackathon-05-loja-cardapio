@@ -7,10 +7,7 @@ namespace FastTech.LojaCardapio.Application.Dtos.Stores
     {
         [Required(ErrorMessage = "The IdStore field is required.")]
         public Guid IdStore { get; set; }
-
-        [Required(ErrorMessage = "The LastUpdatedAt field is required.")]
-        public DateTime LastUpdatedAt { get; set; } = DateTime.UtcNow;
-        public bool IsAvailable { get; set; } = false;
+        public bool IsAvailable { get; set; }
 
         public override string ToString()
         {

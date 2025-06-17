@@ -4,34 +4,54 @@
         <name>FastTech.LojaCardapio.Web</name>
     </assembly>
     <members>
+        <member name="M:FastTech.LojaCardapio.Web.Controllers.CardapioController.GetAllAvailable">
+            <summary>
+            Busca Todas as items no banco de dados.
+            </summary>
+        </member>
+        <member name="M:FastTech.LojaCardapio.Web.Controllers.CardapioController.GetById(System.Guid)">
+            <summary>
+            Busca Todas o Item do cardápio por Id no banco de dados.
+            </summary>
+        </member>
         <member name="M:FastTech.LojaCardapio.Web.Controllers.CardapioController.CreateCardapio(FastTech.LojaCardapio.Application.Dtos.MenuItems.CreateMenuItemsDto)">
             <summary>
-            Envie o cardápio para a fila que será criada.
+            Cadastra o Item do Cardápio e envia para o Banco de dados
             </summary>
         </member>
         <member name="M:FastTech.LojaCardapio.Web.Controllers.CardapioController.UpdateCardapio(FastTech.LojaCardapio.Application.Dtos.MenuItems.UpdateMenuItemsDto)">
             <summary>
-            Envia o cardápio para a fila que será atualizado.
+            Atualiza o Item do Cardápio e envia para o Banco de dados
             </summary>
         </member>
         <member name="M:FastTech.LojaCardapio.Web.Controllers.CardapioController.UpdateStatusCardapio(FastTech.LojaCardapio.Application.Dtos.MenuItems.UpdateMenuItemsStatusDto)">
             <summary>
-            Envia o cardápio para a fila que será atualizado o status IsAvailable.
+            Envia o Id do Item do Cardápio para a atualização do status no banco de dados
+            </summary>
+        </member>
+        <member name="M:FastTech.LojaCardapio.Web.Controllers.LojaController.GetAllAvailable">
+            <summary>
+            Busca Todas as lojas no banco de dados.
+            </summary>
+        </member>
+        <member name="M:FastTech.LojaCardapio.Web.Controllers.LojaController.GetById(System.Guid)">
+            <summary>
+            Busca Todas a loja por Id no banco de dados.
             </summary>
         </member>
         <member name="M:FastTech.LojaCardapio.Web.Controllers.LojaController.CreateLoja(FastTech.LojaCardapio.Application.Dtos.Stores.CreateStoreDto)">
             <summary>
-            Envie a loja para a fila que será criada.
+            Cadastra uma nova loja no banco de dados.
             </summary>
         </member>
         <member name="M:FastTech.LojaCardapio.Web.Controllers.LojaController.UpdateLoja(FastTech.LojaCardapio.Application.Dtos.Stores.UpdateStoreDto)">
             <summary>
-            Envia a loja para a fila que será atualizado.
+            Atualiza a loja no Banco de dados.
             </summary>
         </member>
         <member name="M:FastTech.LojaCardapio.Web.Controllers.LojaController.UpdateStatusLoja(FastTech.LojaCardapio.Application.Dtos.Stores.UpdateStoreStatusDto)">
             <summary>
-            Envia a loja para a fila que será atualizado o status IsAvailable.
+            Altera o status da loja IsAvailable.
             </summary>
         </member>
     </members>

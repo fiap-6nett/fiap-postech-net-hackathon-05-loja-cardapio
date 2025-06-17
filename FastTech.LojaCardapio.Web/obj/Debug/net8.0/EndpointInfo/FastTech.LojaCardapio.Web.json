@@ -5,12 +5,95 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/v1.0/Cardapio/GetAllAvailable": {
+      "get": {
+        "tags": [
+          "Cardapio"
+        ],
+        "summary": "Busca Todas as items no banco de dados.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v1.0/Cardapio/GetById/{id}": {
+      "get": {
+        "tags": [
+          "Cardapio"
+        ],
+        "summary": "Busca Todas o Item do cardápio por Id no banco de dados.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
     "/api/v1.0/Cardapio/CreateCardapio": {
       "post": {
         "tags": [
           "Cardapio"
         ],
-        "summary": "Envie o cardápio para a fila que será criada.",
+        "summary": "Cadastra o Item do Cardápio e envia para o Banco de dados",
         "requestBody": {
           "content": {
             "application/json": {
@@ -53,6 +136,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -62,7 +148,7 @@
         "tags": [
           "Cardapio"
         ],
-        "summary": "Envia o cardápio para a fila que será atualizado.",
+        "summary": "Atualiza o Item do Cardápio e envia para o Banco de dados",
         "requestBody": {
           "content": {
             "application/json": {
@@ -105,6 +191,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -114,7 +203,7 @@
         "tags": [
           "Cardapio"
         ],
-        "summary": "Envia o cardápio para a fila que será atualizado o status IsAvailable.",
+        "summary": "Envia o Id do Item do Cardápio para a atualização do status no banco de dados",
         "requestBody": {
           "content": {
             "application/json": {
@@ -157,6 +246,92 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v1.0/Loja/GetAllAvailable": {
+      "get": {
+        "tags": [
+          "Loja"
+        ],
+        "summary": "Busca Todas as lojas no banco de dados.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/v1.0/Loja/GetById/{id}": {
+      "get": {
+        "tags": [
+          "Loja"
+        ],
+        "summary": "Busca Todas a loja por Id no banco de dados.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -166,7 +341,7 @@
         "tags": [
           "Loja"
         ],
-        "summary": "Envie a loja para a fila que será criada.",
+        "summary": "Cadastra uma nova loja no banco de dados.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -209,6 +384,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -218,7 +396,7 @@
         "tags": [
           "Loja"
         ],
-        "summary": "Envia a loja para a fila que será atualizado.",
+        "summary": "Atualiza a loja no Banco de dados.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -261,6 +439,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -270,7 +451,7 @@
         "tags": [
           "Loja"
         ],
-        "summary": "Envia a loja para a fila que será atualizado o status IsAvailable.",
+        "summary": "Altera o status da loja IsAvailable.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -313,6 +494,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -322,22 +506,19 @@
     "schemas": {
       "CategoryEnums": {
         "enum": [
-          0,
-          1,
-          2,
-          3
+          "Lanche",
+          "Acompanhamento",
+          "Bebida",
+          "Sobremesa"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "CreateMenuItemsDto": {
         "required": [
           "category",
-          "createdAt",
           "description",
           "idMenuItem",
           "idStore",
-          "lastUpdatedAt",
           "name",
           "price"
         ],
@@ -360,7 +541,7 @@
           "description": {
             "maxLength": 200,
             "minLength": 3,
-            "pattern": "^[A-Za-zÀ-ÿ\\s]+$",
+            "pattern": "^[A-Za-zÀ-ÿ0-9\\s]+$",
             "type": "string"
           },
           "price": {
@@ -371,26 +552,13 @@
           },
           "category": {
             "$ref": "#/components/schemas/CategoryEnums"
-          },
-          "lastUpdatedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "isAvailable": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
       },
       "CreateStoreDto": {
         "required": [
-          "createdAt",
           "idStore",
-          "lastUpdatedAt",
           "location",
           "name"
         ],
@@ -409,19 +577,8 @@
           "location": {
             "maxLength": 200,
             "minLength": 3,
-            "pattern": "^[A-Za-zÀ-ÿ\\s]+$",
+            "pattern": "^[A-Za-zÀ-ÿ0-9\\s,]+$",
             "type": "string"
-          },
-          "lastUpdatedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "isAvailable": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -445,18 +602,12 @@
           "category",
           "description",
           "idMenuItem",
-          "idStore",
-          "lastUpdatedAt",
           "name",
           "price"
         ],
         "type": "object",
         "properties": {
           "idMenuItem": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "idStore": {
             "type": "string",
             "format": "uuid"
           },
@@ -469,7 +620,7 @@
           "description": {
             "maxLength": 200,
             "minLength": 3,
-            "pattern": "^[A-Za-zÀ-ÿ\\s]+$",
+            "pattern": "^[A-Za-zÀ-ÿ0-9\\s]+$",
             "type": "string"
           },
           "price": {
@@ -480,32 +631,19 @@
           },
           "category": {
             "$ref": "#/components/schemas/CategoryEnums"
-          },
-          "lastUpdatedAt": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false
       },
       "UpdateMenuItemsStatusDto": {
         "required": [
-          "idMenuItem",
-          "idStore"
+          "idMenuItem"
         ],
         "type": "object",
         "properties": {
           "idMenuItem": {
             "type": "string",
             "format": "uuid"
-          },
-          "idStore": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "lastUpdatedAt": {
-            "type": "string",
-            "format": "date-time"
           },
           "isAvailable": {
             "type": "boolean"
@@ -516,7 +654,6 @@
       "UpdateStoreDto": {
         "required": [
           "idStore",
-          "lastUpdatedAt",
           "location",
           "name"
         ],
@@ -535,30 +672,21 @@
           "location": {
             "maxLength": 200,
             "minLength": 3,
-            "pattern": "^[A-Za-zÀ-ÿ\\s]+$",
+            "pattern": "^[A-Za-zÀ-ÿ0-9\\s,]+$",
             "type": "string"
-          },
-          "lastUpdatedAt": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false
       },
       "UpdateStoreStatusDto": {
         "required": [
-          "idStore",
-          "lastUpdatedAt"
+          "idStore"
         ],
         "type": "object",
         "properties": {
           "idStore": {
             "type": "string",
             "format": "uuid"
-          },
-          "lastUpdatedAt": {
-            "type": "string",
-            "format": "date-time"
           },
           "isAvailable": {
             "type": "boolean"

@@ -5,12 +5,16 @@ namespace FastTech.LojaCardapio.Domain.Entities
 {
     public class MenuItemsEntity : BaseEntity
     {
-        public Guid IdMenuItem { get; private set; }
-        public Guid IdStore { get; private set; }
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public decimal Price { get; private set; }
-        public CategoryEnums Category { get; private set; }
+        public Guid IdMenuItem { get; protected set; }
+        public Guid IdStore { get; protected set; }
+        public string Name { get; protected set; }
+        public string Description { get; protected set; }
+        public decimal Price { get; protected set; }
+        public CategoryEnums Category { get; protected set; }
+
+        //Navegação
+        public virtual StoresEntity Store { get; protected set; }
+
 
         #region validações
 
@@ -52,7 +56,7 @@ namespace FastTech.LojaCardapio.Domain.Entities
         public void SetDescription(string description) {
             if (string.IsNullOrWhiteSpace(description))
                 throw new ArgumentException("Description cannot be empty or null.");
-            if (description.Length < 10 || description.Length > 500)
+            if (description.Length < 3 || description.Length > 500)
                 throw new ArgumentException("Description must be between 10 and 500 characters.");
             Description = description;
         }
@@ -73,6 +77,20 @@ namespace FastTech.LojaCardapio.Domain.Entities
         public void SetIsAvailable(bool isAvailable)
         {
             IsAvailable = isAvailable;
+        }
+
+        public void SetLastUpdatedAt(DateTimeOffset lastUpdatedAt)
+        {
+            if (lastUpdatedAt == null || lastUpdatedAt == DateTime.MinValue)
+                throw new ArgumentException("Last updated at cannot be null or default value.");
+            LastUpdatedAt = lastUpdatedAt;
+        }
+
+        public void SetCreatedAt(DateTimeOffset createdAt)
+        {
+            if (createdAt == null || createdAt == DateTime.MinValue)
+                throw new ArgumentException("Created at cannot be null or default value.");
+            CreatedAt = createdAt;
         }
 
 

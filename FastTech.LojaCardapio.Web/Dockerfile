@@ -14,9 +14,8 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["FastTech.LojaCardapio.Web/FastTech.LojaCardapio.Web.csproj", "FastTech.LojaCardapio.Web/"]
 COPY ["FastTech.LojaCardapio.Infra/FastTech.LojaCardapio.Infra.csproj", "FastTech.LojaCardapio.Infra/"]
-COPY ["FastTech.LojaCardapio.Domain/FastTech.LojaCardapio.Domain.csproj", "FastTech.LojaCardapio.Domain/"]
 COPY ["FastTech.LojaCardapio.Application/FastTech.LojaCardapio.Application.csproj", "FastTech.LojaCardapio.Application/"]
-COPY ["FastTech.LojaCardapio.Tests/FastTech.LojaCardapio.Tests.csproj", "FastTech.LojaCardapio.Tests/"]
+COPY ["FastTech.LojaCardapio.Domain/FastTech.LojaCardapio.Domain.csproj", "FastTech.LojaCardapio.Domain/"]
 RUN dotnet restore "./FastTech.LojaCardapio.Web/FastTech.LojaCardapio.Web.csproj"
 COPY . .
 WORKDIR "/src/FastTech.LojaCardapio.Web"

@@ -1,4 +1,4 @@
-﻿
+﻿using FastTech.LojaCardapio.Application.Validations;
 using FastTech.LojaCardapio.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
@@ -19,26 +19,20 @@ namespace FastTech.LojaCardapio.Application.Dtos.MenuItems
         [RegularExpression(@"^[A-Za-zÀ-ÿ\s]+$", ErrorMessage = "The Name field can only contain letters and numbers.")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "The Location field is required.")]
-        [MinLength(3, ErrorMessage = "The Location field must be at least 3 characters long.")]
-        [MaxLength(200, ErrorMessage = "The Location field must not exceed 200 characters.")]
-        [RegularExpression(@"^[A-Za-zÀ-ÿ\s]+$", ErrorMessage = "The Location field can only contain letters and numbers.")]
+        [Required(ErrorMessage = "The Description field is required.")]
+        [MinLength(3, ErrorMessage = "The Description field must be at least 3 characters long.")]
+        [MaxLength(200, ErrorMessage = "The Description field must not exceed 200 characters.")]
+        [RegularExpression(@"^[A-Za-zÀ-ÿ0-9\s]+$", ErrorMessage = "The Location field can only contain letters and numbers.")]
         public string Description { get; set; }
 
         [Required(ErrorMessage = "The Price field is required.")]
         [Range(0.01, 10000, ErrorMessage = "The Price field must be between 0.01 and 10,000.")]
+        [TwoDecimalPlaces(ErrorMessage = "The Price field must have up to two decimal places.")]
         public decimal Price { get; set; }
 
         [Required(ErrorMessage = "The Category field is required.")]
         [EnumDataType(typeof(CategoryEnums), ErrorMessage = "The Category field must be a valid category.")]
         public CategoryEnums Category { get; set; }
-
-        [Required(ErrorMessage = "The LastUpdatedAt field is required.")]
-        public DateTime LastUpdatedAt { get; set; } = DateTime.UtcNow;
-
-        [Required(ErrorMessage = "The CreatedAt field is required.")]
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public bool IsAvailable { get; set; } = true; // valor padrão
         public override string ToString()
         {
             return JsonSerializer.Serialize(this);

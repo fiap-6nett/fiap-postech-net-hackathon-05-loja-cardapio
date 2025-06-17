@@ -1,8 +1,9 @@
 ﻿using FastTech.LojaCardapio.Application.Dtos;
 using FastTech.LojaCardapio.Application.Dtos.MenuItems;
 using FastTech.LojaCardapio.Application.Dtos.Stores;
-using FastTech.LojaCardapio.Application.Interfaces;
+using FastTech.LojaCardapio.Application.Interfaces.Services;
 using FastTech.LojaCardapio.Application.Services;
+using FastTech.LojaCardapio.Domain.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FastTech.LojaCardapio.Web.Controllers
@@ -19,12 +20,51 @@ namespace FastTech.LojaCardapio.Web.Controllers
         }
 
         /// <summary>
-        /// Envie o cardápio para a fila que será criada.
+        /// Busca Todos os items no banco de dados.
+        /// </summary>
+        [HttpGet("[action]")]
+        [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<List<ResponseStoreDto>>> GetAllAvailable()
+        {
+            var items = await _menuItensService.GetAllAvailableMenuItemAsync();
+            return Ok(items);
+        }
+
+        /// <summary>
+        /// Busca o Item do cardápio por Id no banco de dados.
+        /// </summary>
+        [HttpGet("[action]/{id:guid}")]
+        [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ResponseStoreDto>> GetById(Guid id)
+        {
+            try
+            {
+                var items = await _menuItensService.GetAvailableMenuItemByIdAsync(id);
+                return Ok(items);
+            }
+            catch (NotFoundException ex)
+            {
+                _logger.LogError($"Item não encontrada: {ex.Message}");
+                return NotFound(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+        }
+
+        /// <summary>
+        /// Cadastra o Item do Cardápio e envia para o Banco de dados
         /// </summary>
         //Cadastrar
         [HttpPost("[action]")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> CreateCardapio([FromBody] CreateMenuItemsDto dto)
         {
             try
@@ -48,6 +88,11 @@ namespace FastTech.LojaCardapio.Web.Controllers
 
                 return Ok(response);
             }
+            catch (NotFoundException ex)
+            {
+                _logger.LogError($"Falha no endpoint CreateCardapio. Erro: {ex.Message}");
+                return NotFound(ex.Message);
+            }
             catch (Exception ex)
             {
                 _logger.LogError($"Falha no endpoint CreateCardapio. Erro{ex}");
@@ -56,12 +101,13 @@ namespace FastTech.LojaCardapio.Web.Controllers
         }
 
         /// <summary>
-        /// Envia o cardápio para a fila que será atualizado.
+        /// Atualiza o Item do Cardápio e envia para o Banco de dados
         /// </summary>
         //Atualizar
         [HttpPut("[action]")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateCardapio([FromBody] UpdateMenuItemsDto dto)
         {
             try
@@ -85,6 +131,11 @@ namespace FastTech.LojaCardapio.Web.Controllers
 
                 return Ok(response);
             }
+            catch (NotFoundException ex)
+            {
+                _logger.LogError($"Falha no endpoint UpdateCardapio. Erro: {ex.Message}");
+                return NotFound(ex.Message);
+            }   
             catch (Exception ex)
             {
 
@@ -94,12 +145,13 @@ namespace FastTech.LojaCardapio.Web.Controllers
         }
 
         /// <summary>
-        /// Envia o cardápio para a fila que será atualizado o status IsAvailable.
+        /// Envia o Id do Item do Cardápio para a atualização do status no banco de dados
         /// </summary>
         //Deletar
         [HttpPut("[action]")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateStatusCardapio([FromBody] UpdateMenuItemsStatusDto dto)
         {
             try
@@ -121,6 +173,11 @@ namespace FastTech.LojaCardapio.Web.Controllers
                 };
 
                 return Ok(response);
+            }
+            catch (NotFoundException ex)
+            {
+                _logger.LogError($"Falha no endpoint UpdateStatusCardapio. Erro: {ex.Message}");
+                return NotFound(ex.Message);
             }
             catch (Exception ex)
             {

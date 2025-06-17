@@ -1,8 +1,11 @@
-using FastTech.LojaCardapio.Application.Configurations;
-using FastTech.LojaCardapio.Application.Interfaces;
 using FastTech.LojaCardapio.Application.Services;
-using FastTech.LojaCardapio.Infra.RabbitMq;
+using FastTech.LojaCardapio.Infra.Persistense;
 using System.Reflection;
+using Microsoft.EntityFrameworkCore;
+using FastTech.LojaCardapio.Infra.Persistense.Repositories;
+using FastTech.LojaCardapio.Web.Middlewares;
+using FastTech.LojaCardapio.Application.Interfaces.Repository;
+using FastTech.LojaCardapio.Application.Interfaces.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,11 +15,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IStoresService, StoresService>();
-builder.Services.AddScoped<IMenuItensService, MenuItensService>();
+builder.Services.AddDbContext<LojaCardapioDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("RabbitMQ"));
-builder.Services.AddSingleton<IAsyncRabbitMqProducer, RabbitMqProducer>();
+
+builder.Services.AddScoped<IMenuItensService, MenuItensService>();
+builder.Services.AddScoped<IStoresService, StoresService>();
+
+builder.Services.AddScoped<IStoreRepository, StoreRepository>();
+builder.Services.AddScoped<IMenuItensRepository, MenuItensRepository>();
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -44,6 +51,7 @@ app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthentication();
 
 app.UseAuthorization();
