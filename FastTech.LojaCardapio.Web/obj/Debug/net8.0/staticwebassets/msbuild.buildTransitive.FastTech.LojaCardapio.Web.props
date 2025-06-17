@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\FastTech.LojaCardapio.Web.props" />
-</Project>
