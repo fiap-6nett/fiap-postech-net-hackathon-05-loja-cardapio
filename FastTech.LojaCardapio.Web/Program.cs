@@ -32,10 +32,10 @@ builder.Services.AddSwaggerGen(options =>
     options.IncludeXmlComments(xmlPath);
 });
 
-builder.WebHost.ConfigureKestrel(options =>
-{
-    options.ListenAnyIP(8080); // Porta que será exposta no Docker
-});
+//builder.WebHost.ConfigureKestrel(options =>
+//{
+//    options.ListenAnyIP(8080); // Porta que será exposta no Docker
+//});
 
 var app = builder.Build();
 
