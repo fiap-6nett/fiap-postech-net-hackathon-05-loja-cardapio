@@ -1,21 +1,16 @@
-﻿using System.Runtime.Serialization;
-using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FastTech.LojaCardapio.Domain.Enums
 {
-    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum CategoryEnums
     {
-        [EnumMember(Value = "Lanche")]
-        Lanche,
+        [Display(Name = "Snack")]
+        Snack = 0,
 
-        [EnumMember(Value = "Acompanhamento")]
-        Acompanhamento,
+        [Display(Name = "Dessert")]
+        Drink = 1,
 
-        [EnumMember(Value = "Bebida")]
-        Bebida,
-
-        [EnumMember(Value = "Sobremesa")]
-        Sobremesa
+        [Display(Name = "Drink")]
+        Dessert = 2
     }
 }
