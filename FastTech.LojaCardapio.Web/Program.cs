@@ -58,4 +58,21 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+
+// Migration 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<LojaCardapioDbContext>();
+        context.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Erro ao aplicar migrations: {ex.Message}");
+        throw;
+    }
+}
+
 app.Run();
