@@ -3,6 +3,7 @@ using System;
 using FastTech.LojaCardapio.Infra.Persistense;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FastTech.LojaCardapio.Infra.Migrations
 {
     [DbContext(typeof(LojaCardapioDbContext))]
-    partial class LojaCardapioDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250710124121_update")]
+    partial class update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
