@@ -4,6 +4,7 @@ using FastTech.LojaCardapio.Application.Dtos.Stores;
 using FastTech.LojaCardapio.Application.Interfaces.Services;
 using FastTech.LojaCardapio.Application.Services;
 using FastTech.LojaCardapio.Domain.Exceptions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FastTech.LojaCardapio.Web.Controllers
@@ -22,6 +23,7 @@ namespace FastTech.LojaCardapio.Web.Controllers
         /// <summary>
         /// Busca Todos os items no banco de dados.
         /// </summary>
+        [Authorize]
         [HttpGet("[action]")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -35,6 +37,7 @@ namespace FastTech.LojaCardapio.Web.Controllers
         /// <summary>
         /// Busca o Item do cardápio por Id no banco de dados.
         /// </summary>
+        [Authorize]
         [HttpGet("[action]/{id:guid}")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -61,6 +64,7 @@ namespace FastTech.LojaCardapio.Web.Controllers
         /// Cadastra o Item do Cardápio e envia para o Banco de dados
         /// </summary>
         //Cadastrar
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPost("[action]")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -104,6 +108,7 @@ namespace FastTech.LojaCardapio.Web.Controllers
         /// Atualiza o Item do Cardápio e envia para o Banco de dados
         /// </summary>
         //Atualizar
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPut("[action]")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -148,6 +153,7 @@ namespace FastTech.LojaCardapio.Web.Controllers
         /// Envia o Id do Item do Cardápio para a atualização do status no banco de dados
         /// </summary>
         //Deletar
+        [Authorize(Roles = "Admin, Manager")]
         [HttpPut("[action]")]
         [ProducesResponseType(typeof(ResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
