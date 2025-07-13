@@ -15,17 +15,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<LojaCardapioDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
 builder.Services.AddScoped<IMenuItensService, MenuItensService>();
 builder.Services.AddScoped<IStoresService, StoresService>();
-
 builder.Services.AddScoped<IStoreRepository, StoreRepository>();
 builder.Services.AddScoped<IMenuItensRepository, MenuItensRepository>();
 
@@ -37,11 +34,11 @@ builder.Services.AddSwaggerGen(options =>
 
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Name = "Authorization", // nome do header
-        Type = SecuritySchemeType.Http, // tipo do esquema
-        Scheme = "Bearer", // tipo do token (Bearer token)
-        BearerFormat = "JWT", // formato do token
-        In = ParameterLocation.Header, // local onde o token será enviado
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
         Description = "Insira o token JWT no campo abaixo. Exemplo: Bearer {seu token}"
     });
 
@@ -61,6 +58,11 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+// Leitura segura da JWT_SECRET_KEY via variável de ambiente
+var jwtSecretKey = Environment.GetEnvironmentVariable("JWT_SECRET_KEY");
+if (string.IsNullOrEmpty(jwtSecretKey))
+    throw new InvalidOperationException("JWT_SECRET_KEY não definida no ambiente.");
+
 // Configuração de autenticação JWT
 builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
 {
@@ -73,20 +75,15 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
         ClockSkew = TimeSpan.FromMinutes(5),
         ValidIssuer = builder.Configuration["Identity:Issuer"],
         ValidAudience = builder.Configuration["Identity:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Identity:SecretKey"])),
-        RoleClaimType = ClaimTypes.Role, // para [Authorize(Roles = ...)]
-        NameClaimType = ClaimTypes.NameIdentifier // para recuperar o ID com User.FindFirst(...)
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecretKey)),
+        RoleClaimType = ClaimTypes.Role,
+        NameClaimType = ClaimTypes.NameIdentifier
     };
 });
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+// Swagger disponível em todos os ambientes
 app.UseSwagger();
 app.UseSwaggerUI();
 
@@ -94,13 +91,11 @@ app.UseHttpsRedirection();
 
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthentication();
-
 app.UseAuthorization();
 
 app.MapControllers();
 
-
-// Migration 
+// Executa migrations ao iniciar
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
